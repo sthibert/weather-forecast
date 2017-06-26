@@ -1,5 +1,5 @@
 {
-  "name": "weather-fivecast",
+  "name": "weather-forecast",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -21,7 +21,12 @@
     "@angular/platform-browser": "^4.0.0",
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
+    "@types/lodash": "^4.14.66",
     "core-js": "^2.4.1",
+    "font-awesome": "^4.7.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "normalize.css": "^7.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },

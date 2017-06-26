@@ -1,0 +1,7 @@
+<div class="content">
+  <div class="slices">
+    <div *ngFor="let dailyForecasts of forecastsByDay | mapToIterable">
+      <app-slice [dailyForecasts]="dailyForecasts.value"></app-slice>
+    </div>
+  </div>
+</div>

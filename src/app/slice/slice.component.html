@@ -1,0 +1,54 @@
+<div class="slice slice--state-{{getWeatherCondition()}}">
+  <div class="wstate-wrap">
+    <svg class="wstate wstate--sunny">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-sunny"></use>
+    </svg>
+    <svg class="wstate wstate--partlycloudy">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-partlycloudy"></use>
+    </svg>
+    <svg class="wstate wstate--cloudy">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-cloudy"></use>
+    </svg>
+    <svg class="wstate wstate--rain">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-rain"></use>
+    </svg>
+    <svg class="wstate wstate--thunders">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-thunders"></use>
+    </svg>
+    <svg class="wstate wstate--clearnight">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-clearnight"></use>
+    </svg>
+    <svg class="wstate wstate--partlycloudynight">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#state-partlycloudynight"></use>
+    </svg>
+  </div>
+  <span class="slice__data slice__data--period">
+    <i class="icon fa fa-clock-o fa-lg fa-fw" aria-hidden="true"></i>
+    <span class="slice__data slice__data--time">{{getTime()}}</span>
+  </span>
+  <span class="slice__data slice__data--dateday">
+    <span class="slice__data slice__data--day">{{getDay()}} -</span>
+    <span class="slice__data slice__data--date">{{getDate()}}</span>
+  </span>
+  <span class="slice__data slice__data--air">
+    <i class="icon fa fa-thermometer-three-quarters fa-lg fa-fw" aria-hidden="true"></i>
+    <span class="slice__data slice__data--temperature">{{getTemperature()}} °C</span>
+  </span>
+  <span class="slice__data slice__data--wind">
+    <i class="icon fa fa-long-arrow-up fa-lg fa-fw" aria-hidden="true"
+       [style.transform]="'rotate(' + getWindDirection() + 'deg)'"></i>
+    <span class="slice__data slice__data--wind-speed">{{getWindSpeed()}} m/s</span>
+  </span>
+  <span class="slice__data slice__data--clouds">
+    <i class="icon fa fa-cloud fa-lg fa-fw" aria-hidden="true"></i>
+    <span class="slice__data slice__data--cloudiness">{{getHumidity()}} %</span>
+  </span>
+  <span class="slice__data slice__data--humidity">
+    <i class="icon fa fa-tint fa-lg fa-fw" aria-hidden="true"></i>
+    <span class="slice__data slice__data--humidity-percentage">{{getHumidity()}} %</span>
+  </span>
+  <div class="slice__hover">
+    <span class="push-right"></span>
+    <div *ngFor="let _ of dailyForecasts; let i = index" (mouseover)='setIndex(i)'></div>
+  </div>
+</div>

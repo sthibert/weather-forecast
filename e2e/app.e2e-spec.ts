@@ -1,10 +1,10 @@
-import { WeatherFivecastPage } from './app.po';
+import { WeatherForecastPage } from './app.po';
 
-describe('weather-fivecast App', () => {
-  let page: WeatherFivecastPage;
+describe('weather-forecast App', () => {
+  let page: WeatherForecastPage;
 
   beforeEach(() => {
-    page = new WeatherFivecastPage();
+    page = new WeatherForecastPage();
   });
 
   it('should display welcome message', () => {

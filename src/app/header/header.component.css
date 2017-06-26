@@ -1,0 +1,38 @@
+.header {
+  position: relative;
+  z-index: 10000;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5em;
+}
+
+.header h1 {
+  width: 100%;
+}
+
+.header__title {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  color: #435965;
+}
+
+.header__right {
+  float: right;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 43.25em) {
+  .header {
+    font-size: 0.85em;
+    background: rgba(112, 155, 183, 0.21);
+  }
+}

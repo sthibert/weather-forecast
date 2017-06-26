@@ -1,20 +1,56 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
-
+<svg class="hidden">
+  <defs>
+    <symbol id="state-sunny" viewBox="0 0 80 80">
+      <title>sunny</title>
+      <path d="M25,20.31A13.12,13.12,0,1,1,11.88,33.44,13.13,13.13,0,0,1,25,20.31Z" fill="#FFEB3B"/>
+    </symbol>
+    <symbol id="state-cloudy" viewBox="0 0 80 80">
+      <title>cloudy</title>
+      <path
+        d="M60.38,35.59a14.06,14.06,0,0,0-25.48-5.34,5.55,5.55,0,0,0-2.41-.56,5.62,5.62,0,0,0-5.63,5.63v0l-.94,0A10.31,10.31,0,0,0,15.63,45.62c0,.35,0,.69.05,1a6.55,6.55,0,0,0,.89,13H57.81a12.19,12.19,0,0,0,2.57-24.1Z"
+        fill="#e1e1e1"/>
+    </symbol>
+    <symbol id="state-partlycloudy" viewBox="0 0 80 80">
+      <title>partly cloudy</title>
+      <path d="M25,20.31A13.12,13.12,0,1,1,11.88,33.44,13.13,13.13,0,0,1,25,20.31Z" fill="#FFEB3B"/>
+      <path
+        d="M60.38,35.59a14.06,14.06,0,0,0-25.48-5.34,5.55,5.55,0,0,0-2.41-.56,5.62,5.62,0,0,0-5.63,5.63v0l-.94,0A10.31,10.31,0,0,0,15.63,45.62c0,.35,0,.69.05,1a6.55,6.55,0,0,0,.89,13H57.81a12.19,12.19,0,0,0,2.57-24.1Z"
+        fill="#fff"/>
+    </symbol>
+    <symbol id="state-rain" viewBox="0 0 80 80">
+      <title>rain</title>
+      <path
+        d="M60.38,35.59a14.06,14.06,0,0,0-25.48-5.34,5.55,5.55,0,0,0-2.41-.56,5.62,5.62,0,0,0-5.63,5.63v0l-.94,0A10.31,10.31,0,0,0,15.63,45.62c0,.35,0,.69.05,1a6.55,6.55,0,0,0,.89,13H57.81a12.19,12.19,0,0,0,2.57-24.1Z"
+        fill="#a0b0b0"/>
+      <path
+        d="M35.36,54.71A1,1,0,0,0,34,55.1l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,35.36,54.71Zm2.75-7-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71a1,1,0,0,0-1.75-1Zm.69,15.41a1,1,0,0,0-1.36.39l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,38.8,63.08Zm4.11-7.42a1,1,0,0,0-1.36.39L39.5,59.76a1,1,0,0,0,1.75,1L43.31,57A1,1,0,0,0,42.92,55.66ZM27.8,53.75a1,1,0,0,0-1.36.39l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,27.8,53.75Zm-4.11,7.42a1,1,0,0,0-1.36.39l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,23.69,61.17Zm7.56,1a1,1,0,0,0-1.36.39l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,31.25,62.13Zm-4.12,7.42a1,1,0,0,0-1.36.39l-2.06,3.71a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,27.13,69.55Zm4.79-23.22a1,1,0,0,0-1.36.39L28.5,50.43a1,1,0,0,0,1.75,1l2.06-3.71A1,1,0,0,0,31.92,46.33Z"
+        fill="#576a7e"/>
+    </symbol>
+    <symbol id="state-thunders" viewBox="0 0 80 80">
+      <title>thunders</title>
+      <path
+        d="M60.38,35.59a14.06,14.06,0,0,0-25.48-5.34,5.55,5.55,0,0,0-2.41-.56,5.62,5.62,0,0,0-5.63,5.63v0l-.94,0A10.31,10.31,0,0,0,15.63,45.62c0,.35,0,.69.05,1a6.55,6.55,0,0,0,.89,13H57.81a12.19,12.19,0,0,0,2.57-24.1Z"
+        fill="#7a90a5"/>
+      <path d="M45.67,56.26l-7.69,0L42.6,45.88H31.73L25.5,63h7.9L30.14,73.36Z" fill="#f0f0f0"/>
+    </symbol>
+    <symbol id="state-clearnight" viewBox="0 0 80 80">
+      <title>clearnight</title>
+      <path
+        d="M32.35,39.08A11,11,0,0,1,21.27,28.24a10.72,10.72,0,0,1,4-8.33,13.33,13.33,0,1,0,.26,26.65,13.62,13.62,0,0,0,13-9.33A11.23,11.23,0,0,1,32.35,39.08Z"
+        fill="#435965"/>
+    </symbol>
+    <symbol id="state-partlycloudynight" viewBox="0 0 80 80">
+      <title>partlycloudynight</title>
+      <path
+        d="M32.35,39.08A11,11,0,0,1,21.27,28.24a10.72,10.72,0,0,1,4-8.33,13.33,13.33,0,1,0,.26,26.65,13.62,13.62,0,0,0,13-9.33A11.23,11.23,0,0,1,32.35,39.08Z"
+        fill="#435965"/>
+      <path
+        d="M60.38,35.59a14.06,14.06,0,0,0-25.48-5.34,5.55,5.55,0,0,0-2.41-.56,5.62,5.62,0,0,0-5.63,5.63v0l-.94,0A10.31,10.31,0,0,0,15.63,45.62c0,.35,0,.69.05,1a6.55,6.55,0,0,0,.89,13H57.81a12.19,12.19,0,0,0,2.57-24.1Z"
+        fill="#e4e6e6"/>
+    </symbol>
+  </defs>
+</svg>
+<main>
+  <app-header [city]="weather?.city"></app-header>
+  <app-slices [forecasts]="weather?.list"></app-slices>
+</main>

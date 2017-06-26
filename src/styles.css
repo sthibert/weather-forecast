@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Roboto', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  background: #a0cfe4;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
