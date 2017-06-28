@@ -1,25 +1,19 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 
 import { SlicesComponent } from './slices.component';
+import { SliceComponent } from '../slice/slice.component';
+import { MapToIterablePipe } from '../pipes/map-to-iterable.pipe';
 
 describe('SlicesComponent', () => {
-  let component: SlicesComponent;
-  let fixture: ComponentFixture<SlicesComponent>;
-
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [SlicesComponent]
-    })
-      .compileComponents();
+      declarations: [SlicesComponent, SliceComponent, MapToIterablePipe]
+    }).compileComponents();
   }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(SlicesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
   it('should be created', () => {
+    const fixture = TestBed.createComponent(SlicesComponent);
+    const component = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
 });

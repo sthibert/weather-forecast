@@ -1,14 +1,14 @@
 import { WeatherForecastPage } from './app.po';
 
-describe('weather-forecast App', () => {
+describe('weather-forecast app', () => {
   let page: WeatherForecastPage;
 
   beforeEach(() => {
     page = new WeatherForecastPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display header text', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getHeaderText()).toContain('Weather Forecast');
   });
 });
