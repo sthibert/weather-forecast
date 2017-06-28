@@ -8,7 +8,7 @@ import { Weather } from './model/weather';
 @Injectable()
 export class WeatherService {
 
-  private stub = true;
+  private stub = false;
   private fake = '../../assets/sample.json';
   private real = 'http://api.openweathermap.org/data/2.5/forecast' +
     '?id=2800867' +
