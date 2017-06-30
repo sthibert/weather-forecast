@@ -37,11 +37,11 @@
   <span class="slice__data slice__data--wind">
     <i class="icon fa fa-long-arrow-up fa-lg fa-fw" aria-hidden="true"
        [style.transform]="'rotate(' + getWindDirection() + 'deg)'"></i>
-    <span class="slice__data slice__data--wind-speed">{{getWindSpeed()}} m/s</span>
+    <span class="slice__data slice__data--wind-speed">{{getWindSpeed()}} km/h</span>
   </span>
   <span class="slice__data slice__data--clouds">
     <i class="icon fa fa-cloud fa-lg fa-fw" aria-hidden="true"></i>
-    <span class="slice__data slice__data--cloudiness">{{getHumidity()}} %</span>
+    <span class="slice__data slice__data--cloudiness">{{getCloudiness()}} %</span>
   </span>
   <span class="slice__data slice__data--humidity">
     <i class="icon fa fa-tint fa-lg fa-fw" aria-hidden="true"></i>

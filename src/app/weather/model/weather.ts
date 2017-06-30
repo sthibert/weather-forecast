@@ -1,9 +1,11 @@
-import { City } from './city';
-import { Forecast } from './forecast';
+import { DataBlock } from './data-block';
 
 export class Weather {
 
-  city: City;
-  list: Forecast[];
+  latitude: string;
+  longitude: string;
+  timezone: string;
+  hourly: DataBlock;
+  daily: DataBlock;
 
 }

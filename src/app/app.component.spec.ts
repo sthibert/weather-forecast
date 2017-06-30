@@ -1,7 +1,6 @@
 import { async, TestBed } from '@angular/core/testing';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { SlicesComponent } from './slices/slices.component';
 import { MapToIterablePipe } from './pipes/map-to-iterable.pipe';
 import { SliceComponent } from './slice/slice.component';
@@ -12,7 +11,7 @@ describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpModule],
-      declarations: [AppComponent, HeaderComponent, SlicesComponent, SliceComponent, MapToIterablePipe],
+      declarations: [AppComponent, SlicesComponent, SliceComponent, MapToIterablePipe],
       providers: [WeatherService]
     }).compileComponents();
   }));

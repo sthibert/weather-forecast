@@ -51,6 +51,13 @@
   </defs>
 </svg>
 <main>
-  <app-header [city]="weather?.city"></app-header>
-  <app-slices [forecasts]="weather?.list"></app-slices>
+  <header class="header">
+    <h1 class="header__title">Weather Forecast<span class="header__right">Brussels, BE</span></h1>
+  </header>
+  <app-slices [forecasts]="weather?.hourly.data"></app-slices>
 </main>
+<footer class="footer">
+  <h1 class="footer__title"><a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a><span
+    class="footer__right"><a href="https://tympanus.net/codrops/2016/11/18/surf-report-template/" target="_blank">Template by Codrops</a></span>
+  </h1>
+</footer>

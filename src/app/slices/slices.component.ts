@@ -2,7 +2,7 @@ import * as moment from 'moment';
 import * as _ from 'lodash';
 import { Dictionary } from 'lodash';
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Forecast } from '../weather/model/forecast';
+import { DataPoint } from '../weather/model/data-point';
 
 @Component({
   selector: 'app-slices',
@@ -11,9 +11,9 @@ import { Forecast } from '../weather/model/forecast';
 })
 export class SlicesComponent implements OnChanges {
 
-  @Input() forecasts: Forecast[];
+  @Input() forecasts: DataPoint[];
 
-  forecastsByDay: Dictionary<Forecast[]>;
+  forecastsByDay: Dictionary<DataPoint[]>;
 
   ngOnChanges(changes: SimpleChanges): void {
     const forecasts = changes.forecasts.currentValue;
@@ -22,9 +22,9 @@ export class SlicesComponent implements OnChanges {
     }
   }
 
-  private _groupByDay(forecasts: Forecast[]) {
+  private _groupByDay(forecasts: DataPoint[]) {
     return _.groupBy(forecasts, function (forecast) {
-      return moment.unix(forecast.dt).format('DD/MM/YYYY');
+      return moment.unix(forecast.time).format('DD/MM/YYYY');
     });
   }
 
