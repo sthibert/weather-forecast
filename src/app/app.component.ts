@@ -16,7 +16,8 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {
     NProgress.configure({
       minimum: 0.2,
-      template: '<div class="bar" role="bar"><div class="peg"></div></div></div>'
+      trickleSpeed: 100,
+      showSpinner: false
     });
   }
 
