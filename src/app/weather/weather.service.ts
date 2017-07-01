@@ -9,7 +9,7 @@ import { Weather } from './model/weather';
 export class WeatherService {
 
   private local = 'http://localhost:3001/api.darksky';
-  private prod = ''; // TODO proxy API server online
+  private prod = 'https://hydro-pylon-13592.herokuapp.com/api.darksky';
 
   constructor(private http: Http) {
   }
