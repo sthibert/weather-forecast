@@ -13,16 +13,16 @@ export class SlicesComponent implements OnChanges {
 
   @Input() forecasts: DataPoint[];
 
-  forecastsByDay: Dictionary<DataPoint[]>;
+  dailyForecasts: Dictionary<DataPoint[]>;
 
   ngOnChanges(changes: SimpleChanges): void {
     const forecasts = changes.forecasts.currentValue;
     if (forecasts) {
-      this.forecastsByDay = this._groupByDay(forecasts);
+      this.dailyForecasts = this._groupByDay(forecasts);
     }
   }
 
-  private _groupByDay(forecasts: DataPoint[]) {
+  private _groupByDay(forecasts: DataPoint[]): Dictionary<DataPoint[]> {
     return _.groupBy(forecasts, function (forecast) {
       return moment.unix(forecast.time).format('DD/MM/YYYY');
     });

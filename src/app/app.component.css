@@ -67,16 +67,14 @@ main:after {
 
 .footer h1 {
   width: 100%;
+  color: #d6d6d6;
 }
 
 .footer__title {
   font-size: 1em;
+  text-align: center;
   margin: 0;
   padding: 0;
-}
-
-.footer__right {
-  float: right;
 }
 
 a {
@@ -96,5 +94,9 @@ a {
 
   .footer, main:after {
     height: 56px;
+  }
+
+  .hide-mobile {
+    display: none;
   }
 }

@@ -10,10 +10,10 @@ import { DataPoint } from '../weather/model/data-point';
 })
 export class SliceComponent {
 
-  @Input() dailyForecasts: DataPoint[];
+  @Input() dailyForecast: DataPoint[];
 
-  private index = 0;
-  private weatherConditions = {
+  private _index = 0;
+  private _weatherConditions = {
     'clear-day': 'sunny',
     'clear-night': 'clearnight',
     'rain': 'rain',
@@ -26,45 +26,49 @@ export class SliceComponent {
     'partly-cloudy-night': 'partlycloudynight'
   };
 
-  setIndex(index: number) {
-    this.index = index;
+  setIndex(index: number): void {
+    this._index = index;
   }
 
-  getWeatherCondition() {
-    const icon = this.dailyForecasts[this.index].icon;
-    return this.weatherConditions[icon] ? this.weatherConditions[icon] : 'partlycloudly';
+  getWeatherCondition(): string {
+    const icon = this._getHourlyForecast().icon;
+    return this._weatherConditions[icon] ? this._weatherConditions[icon] : 'partlycloudly';
   }
 
-  getTime() {
-    return moment.unix(this.dailyForecasts[this.index].time).format('HH:mm');
+  getTime(): string {
+    return moment.unix(this._getHourlyForecast().time).format('HH:mm');
   }
 
-  getDay() {
-    return moment.unix(this.dailyForecasts[this.index].time).format('dddd');
+  getDay(): string {
+    return moment.unix(this._getHourlyForecast().time).format('dddd');
   }
 
-  getDate() {
-    return moment.unix(this.dailyForecasts[this.index].time).format('DD/MM');
+  getDate(): string {
+    return moment.unix(this._getHourlyForecast().time).format('DD/MM');
   }
 
-  getTemperature() {
-    return Math.round(this.dailyForecasts[this.index].temperature);
+  getTemperature(): number {
+    return Math.round(this._getHourlyForecast().temperature);
   }
 
-  getWindDirection() {
-    return this.dailyForecasts[this.index].windBearing;
+  getWindDirection(): number {
+    return this._getHourlyForecast().windBearing;
   }
 
-  getWindSpeed() {
-    return Math.round(this.dailyForecasts[this.index].windSpeed);
+  getWindSpeed(): number {
+    return Math.round(this._getHourlyForecast().windSpeed);
   }
 
-  getCloudiness() {
-    return Math.round(this.dailyForecasts[this.index].cloudCover * 100);
+  getCloudiness(): number {
+    return Math.round(this._getHourlyForecast().cloudCover * 100);
   }
 
-  getHumidity() {
-    return Math.round(this.dailyForecasts[this.index].humidity * 100);
+  getHumidity(): number {
+    return Math.round(this._getHourlyForecast().humidity * 100);
+  }
+
+  private _getHourlyForecast(): DataPoint {
+    return this.dailyForecast[this._index];
   }
 
 }

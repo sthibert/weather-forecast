@@ -8,15 +8,25 @@ import { Weather } from './model/weather';
 @Injectable()
 export class WeatherService {
 
-  private local = 'http://localhost:3001/api.darksky';
-  private prod = 'https://hydro-pylon-13592.herokuapp.com/api.darksky';
+  private domain = {
+    local: 'http://localhost:3001',
+    prod: 'https://hydro-pylon-13592.herokuapp.com'
+  };
 
   constructor(private http: Http) {
   }
 
-  getWeather(): Observable<Weather> {
-    return this.http.get(isDevMode() ? this.local : this.prod)
+  getWeather(latitude?: number, longitude?: number): Observable<Weather> {
+    const url = this._getUrl(latitude || 50.85, longitude || 4.35); // Brussels by default
+    return this.http.get(url)
       .map((response: any) => response.json());
+  }
+
+  private _getUrl(latitude: number, longitude: number): string {
+    const domain = (isDevMode() ? this.domain.local : this.domain.prod);
+    const route = '/api.darksky';
+    const parameters = '?latitude=' + latitude + '&longitude=' + longitude;
+    return domain + route + parameters;
   }
 
 }

@@ -16,15 +16,25 @@ export class AppComponent implements OnInit {
   constructor(private weatherService: WeatherService) {
     NProgress.configure({
       minimum: 0.2,
-      trickleSpeed: 100,
+      trickleSpeed: 200,
       showSpinner: false
     });
   }
 
   ngOnInit(): void {
     NProgress.start();
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this._getWeather(position.coords.latitude, position.coords.longitude)
+      });
+    } else {
+      this._getWeather();
+    }
+  }
+
+  private _getWeather(latitude?: number, longitude?: number): void {
     this.weatherService
-      .getWeather()
+      .getWeather(latitude, longitude)
       .subscribe(weather => {
         this.weather = weather;
         NProgress.done();
