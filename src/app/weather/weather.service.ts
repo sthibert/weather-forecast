@@ -10,7 +10,7 @@ export class WeatherService {
 
   private domain = {
     local: 'http://localhost:3001',
-    prod: 'https://hydro-pylon-13592.herokuapp.com'
+    prod: 'https://blooming-forest-83104.herokuapp.com'
   };
 
   constructor(private http: Http) {
