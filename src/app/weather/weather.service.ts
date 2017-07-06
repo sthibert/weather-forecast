@@ -24,7 +24,7 @@ export class WeatherService {
 
   private _getUrl(latitude: number, longitude: number): string {
     const domain = (isDevMode() ? this.domain.local : this.domain.prod);
-    const route = '/api.darksky';
+    const route = '/api/darksky';
     const parameters = '?latitude=' + latitude + '&longitude=' + longitude;
     return domain + route + parameters;
   }
