@@ -55,10 +55,9 @@
     <h1 class="header__title">Weather Forecast<span class="header__right">{{weather?.timezone}}</span></h1>
   </header>
   <app-slices [forecasts]="weather?.hourly.data"></app-slices>
+  <footer class="footer">
+    <h1 class="footer__title">
+      Powered by <a href="https://darksky.net/poweredby/" target="_blank">Dark Sky</a>
+    </h1>
+  </footer>
 </main>
-<footer class="footer">
-  <h1 class="footer__title"><span class="hide-mobile">Powered by </span><a href="https://darksky.net/poweredby/"
-                                                                           target="_blank">Dark Sky</a> &bull; <span
-    class="hide-mobile">Template by </span><a href="https://tympanus.net/codrops/2016/11/18/surf-report-template/"
-                                              target="_blank">Codrops</a></h1>
-</footer>

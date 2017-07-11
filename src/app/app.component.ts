@@ -24,17 +24,18 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     NProgress.start();
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this._getWeather(position.coords.latitude, position.coords.longitude)
-      });
+      navigator.geolocation.getCurrentPosition(
+        (position) => this._getWeather(position.coords),
+        () => this._getWeather()
+      );
     } else {
       this._getWeather();
     }
   }
 
-  private _getWeather(latitude?: number, longitude?: number): void {
+  private _getWeather(coordinates?: Coordinates): void {
     this.weatherService
-      .getWeather(latitude, longitude)
+      .getWeather(coordinates)
       .subscribe(weather => {
         this.weather = weather;
         NProgress.done();

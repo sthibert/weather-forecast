@@ -16,9 +16,10 @@ export class WeatherService {
   constructor(private http: Http) {
   }
 
-  getWeather(latitude?: number, longitude?: number): Observable<Weather> {
-    const url = this._getUrl(latitude || 50.85, longitude || 4.35); // Brussels by default
-    return this.http.get(url)
+  getWeather(coordinates?: Coordinates): Observable<Weather> {
+    const latitude = coordinates ? coordinates.latitude : 50.85;
+    const longitude = coordinates ? coordinates.longitude : 4.35;
+    return this.http.get(this._getUrl(latitude, longitude))
       .map((response: any) => response.json());
   }
 
